@@ -1,0 +1,42 @@
+{
+  "name": "bsd-module-core",
+  "license": "ISC",
+  "version": "1.0.4",
+  "description": "Utilities Module",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon --exec babel-node index.js ",
+    "testing": "nodemon bootstrap.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build:babel": "npm run clean && babel . --out-dir dist --ignore node_modules,.git,.gitignore --copy-files",
+    "patch": "npm version patch -m \"%s\" --unsafe-perm",
+    "minor": "npm version minor -m \"%s\" --unsafe-perm",
+    "major": "npm version major -m \"%s\" --unsafe-perm",
+    "version": "git add --all",
+    "postversion": "git push && git push --tags",
+    "clean": "rimraf dist/*"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/cteevin/multilevel-network-marketing.git"
+  },
+  "dependencies": {
+    "@hapi/joi": "^15.1.1",
+    "axios": "^0.19.2",
+    "knex": "^0.21.1",
+    "moment": "^2.27.0",
+    "mysql": "^2.18.1",
+    "redis": "^3.0.2",
+    "uuidv4": "^6.1.0",
+    "youch": "^2.0.10",
+    "youch-terminal": "^1.0.0"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.3",
+    "babel-loader": "^8.0.6",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
+    "babel-preset-env": "^1.7.0",
+    "eslint": "^7.2.0"
+  }
+}
